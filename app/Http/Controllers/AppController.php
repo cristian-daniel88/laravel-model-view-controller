@@ -12,6 +12,7 @@ class AppController extends Controller
       
            $books = Books::join('categories', 'categories.id', 
            '=', 'books.category_id')
+           ->orderby('categories.category', 'ASC')
            ->get([
                  'categories.category', 
                  'books.image',

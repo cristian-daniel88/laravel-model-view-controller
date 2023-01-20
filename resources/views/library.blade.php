@@ -7,16 +7,12 @@
     
 
 
-
-
-
 <div class="grid md:grid-cols-2 
 and lg:grid-cols-3 gap-8
 grid-books
 ">
 
-    
-    
+   
     @foreach ($books as $book)
     
     
