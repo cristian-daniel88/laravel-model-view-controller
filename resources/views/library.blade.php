@@ -17,14 +17,12 @@
     foreach ($books as $key => $value) {
       if(!in_array($value->category, $array)) {
         $array[$key] = $value->category ;
-        echo $array[$key] . '<br>';
+        echo '<b>'. $array[$key]. '</b>' . '<br>';
         foreach ($books as $value2) {
             if ($value2->category  == $array[$key] ) {
                 echo $value2->title . '<br>';
             }
-        }
-
-       
+        }       
       }
     }
 
