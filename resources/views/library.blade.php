@@ -7,6 +7,44 @@
     
 
 
+
+@php
+
+
+
+
+    $array = array();
+    foreach ($books as $key => $value) {
+      if(!in_array($value->category, $array)) {
+        $array[$key] = $value->category ;
+        echo $array[$key] . '<br>';
+        foreach ($books as $value2) {
+            if ($value2->category  == $array[$key] ) {
+                echo $value2->title . '<br>';
+            }
+        }
+
+       
+      }
+    }
+
+
+
+
+
+
+    
+ 
+
+    
+
+    
+@endphp
+
+@php
+
+@endphp
+
 <div class="grid md:grid-cols-2 
 and lg:grid-cols-3 gap-8
 grid-books
