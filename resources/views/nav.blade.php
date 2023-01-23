@@ -61,13 +61,25 @@
           <div class="flex space-x-4">
 
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="{{env('app_url')}}/" class="
+                      text-gray-300 hover:bg-gray-700 
+                      hover:text-white px-3 
+                      py-2 rounded-md 
+                      text-sm font-medium
+                      {{request()->is('/') ? 'text-white px-3 bg-gray-700' : ''}}
+                      ">Books</a>
            
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Books</a>
+            <a href="{{env('app_url')}}/create" class="
+            text-gray-300 hover:bg-gray-700 
+            hover:text-white px-3 
+            py-2 rounded-md 
+            text-sm font-medium
+            {{request()->is('create') ? 'text-white px-3 bg-gray-700' : ''}}
+            ">Add book</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Music</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Backing tracks</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Events</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add backing track</a>
 
 
           </div>
@@ -136,12 +148,12 @@
 <div class="" id="mobile-menu">
   <div class="space-y-1 px-2 pt-2 pb-3" >
     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-    <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium " aria-current="page">Home</a>
+    <a href="{{env('app_url')}}/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium " aria-current="page">Books</a>
 
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Books</a>
+    <a href="{{env('app_url')}}/create" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Book</a>
 
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Music</a>
+    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Backing tracks</a>
 
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add backing track</a>
   </div>
 </div>
