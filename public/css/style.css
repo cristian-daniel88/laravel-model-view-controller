@@ -94,7 +94,8 @@ h1 {
 }
 
 .grid-books {
-  width: 100% !important;
+  width: 95% !important;
+  margin: auto;
 }
 
 .download-big_card {

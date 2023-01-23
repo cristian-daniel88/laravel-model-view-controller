@@ -11,10 +11,12 @@ nav {
     background-image: $color-primary;
     
     display: flex;
+   
   }
   .main {
     margin: auto !important;
     width: 100%;
+ 
   }
   
   h1 {
@@ -117,7 +119,8 @@ nav {
   }
   
   .grid-books {
-    width: 100% !important;
+    width: 95% !important;
+    margin: auto;
     
   }
   
