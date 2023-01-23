@@ -40,16 +40,14 @@
              
             </p>       
         </div>
-        <div class="img-container 
-        border-double border-4 
-        border-lime-800
-        rounded-lg
-        ">
+        <div class="img-container">
         <img src="{{asset('storage/images/' . $book->image)}}" 
         alt=""
-        class="border-double"
+        class="border-double border-4 
+        border-lime-800
+        rounded-lg"
         >
-    </div>
+       </div>
     
     <div>
         <b>Rating: <br></b> 

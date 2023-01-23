@@ -8,7 +8,7 @@ nav {
   }
   
   body {
-    background-color: $color-primary;
+    background-image: $color-primary;
     
     display: flex;
   }
@@ -63,10 +63,14 @@ nav {
       .star {
         font-size: 12px;
       }
+
+      .container-card {
+        width: 250px;
+      }
     }
   
   .container-card {
-    max-width: 300px;
+    max-width: 400px;
     
     display: flex;
     justify-content: space-between;

@@ -5,7 +5,7 @@ nav {
 }
 
 body {
-  background-color: #fff;
+  background-image: #fff;
   display: flex;
 }
 
@@ -49,9 +49,12 @@ h1 {
   .star {
     font-size: 12px;
   }
+  .container-card {
+    width: 250px;
+  }
 }
 .container-card {
-  max-width: 300px;
+  max-width: 400px;
   display: flex;
   justify-content: space-between;
   padding: 1px;
