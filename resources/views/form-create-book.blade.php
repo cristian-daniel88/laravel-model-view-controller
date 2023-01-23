@@ -126,19 +126,19 @@ tracking-wider
     
     <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" 
-          for="category">
-            Category:
+          for="genre">
+           Genre:
           </label>
           <select class="shadow appearance-none border rounded w-full py-2 px-3 
           text-gray-700 leading-tight focus:outline-none 
-          focus:shadow-outline" name="category" id="category">   
+          focus:shadow-outline" name="genre" id="genre">   
           <option selected class="text-gray-500" 
            value="">
           --Please choose an option--
           </option>
-            @foreach ($categories as $item)
+            @foreach ($genres as $item)
             <option value="<?php echo $item['id'] ?>" >
-                <?php echo $item['category']; ?>
+                <?php echo $item['name']; ?>
             </option>
             @endforeach
           </select>
@@ -146,16 +146,24 @@ tracking-wider
     </div>
 
     <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
-          Description:
-        </label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 
-        text-gray-700 leading-tight focus:outline-none 
-        focus:shadow-outline" name="description" 
-        style="resize: none;"
-        id="description" type="text" placeholder="Description">
-        </textarea>
-        <p class="text-red-500 text-xs italic"></p>
+      <label class="block text-gray-700 text-sm font-bold mb-2" 
+      for="instrument">
+       Instrument/Orquesta:
+      </label>
+      <select class="shadow appearance-none border rounded w-full py-2 px-3 
+      text-gray-700 leading-tight focus:outline-none 
+      focus:shadow-outline" name="instrument" id="instrument">   
+      <option selected class="text-gray-500" 
+       value="">
+      --Please choose an option--
+      </option>
+        @foreach ($instruments as $item)
+        <option value="<?php echo $item['id'] ?>" >
+            <?php echo $item['name']; ?>
+        </option>
+        @endforeach
+      </select>
+      <p class="text-red-500 text-xs italic"></p>
     </div>
 
     <div class="mb-4">
@@ -168,6 +176,18 @@ tracking-wider
         id="authors" type="text" placeholder="Authors">
         <p class="text-red-500 text-xs italic"></p>
     </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="arrangements">
+        Musical arrangements
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 
+      text-gray-700 leading-tight focus:outline-none 
+      focus:shadow-outline" name="arrangements" 
+      id="arrangements" type="text" placeholder="Musical arrangements">
+      <p class="text-red-500 text-xs italic"></p>
+    </div>
+
 
     <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="image">

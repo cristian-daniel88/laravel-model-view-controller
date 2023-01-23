@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AppController::class, 'index']);
 
 
-Route::get('/tracks', [AppController::class, 'tracks']);
+Route::get('/book', [AppController::class, 'book']);
 
 
 Route::get('/community', function () {

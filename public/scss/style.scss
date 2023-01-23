@@ -1,0 +1,124 @@
+$color-primary:  #fff;
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 5000;
+  }
+  
+  body {
+    background-color: $color-primary;
+    
+  }
+  
+  h1 {
+    
+      letter-spacing: 5px;
+      color: $color-primary;
+      text-shadow:
+          0 0 7px #fff,
+          0 0 10px #fff,
+          0 0 21px #fff,
+          0 0 42px #5271ff,
+          0 0 82px #5271ff,
+          0 0 92px #5271ff,
+          0 0 102px #5271ff,
+          0 0 151px #5271ff;
+  }
+  
+  #profileMenu {
+      display: none;
+      padding: 0px;
+   
+  }
+  
+  .aProfile:hover {
+      color: blue;
+      box-shadow: 0 0 5px gray;
+      text-shadow: 0 0 1px gray;
+      border-radius: 5px;
+  }
+  
+  #mobile-menu {
+    position: fixed;
+    background-color: #1f2937;
+    width: 100%;
+    top: -500px;
+    /* top: 50px; */
+  }
+  
+    @media only screen and (min-width: 639px) {
+      #mobile-menu {
+        display: none;
+      }
+    }
+  
+  .container-card {
+    max-width: 320px;
+    height: 210px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    padding-bottom: 10px;
+    margin: auto;
+
+    .img-container {
+        margin-top: 20px;
+    }
+   
+  }
+  
+  .column1-card {
+    width: 100px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    
+    padding-bottom: 20px;
+  }
+  
+  .column1-card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .category_container {
+    width: 100%;
+  }
+  
+  .column2-card {
+    width: 190px;
+    padding: 5px;
+  
+  }
+  
+  .column2-card a {
+  
+    margin: 10px;
+    padding: 0 50px;
+    cursor: pointer;
+  }
+  
+  .grid-books {
+    width: 100% !important;
+  }
+  
+  .download-big_card {
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .download-big_card a{
+    width: 100%;
+  }
+   
+  
+  
+  
+  
+  
+  

@@ -3,31 +3,52 @@
 namespace App\Http\Controllers;
 
 use App\Models\Books;
+use App\Models\Reviews;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AppController extends Controller
 {
         
         public function index() {
-      
-           $books = Books::join('categories', 'categories.id', 
-           '=', 'books.category_id')
-           ->orderby('categories.category', 'ASC')
+           $reviews = Reviews::all();
+           $books = Books::
+             join('genres', 'genres.id', '=', 'books.genre_id')
+           ->join('instruments', 'instruments.id', '=', 'books.instrument_id')
+           
+           
+           
+           ->orderby('genres.name', 'ASC')
+           
            ->get([
-                 'categories.category', 
+               
+                 'instruments.name AS instrument',
+                 'genres.name AS genre', 
                  'books.image',
                  'books.title',
-                 'books.description',
+                 'books.musical_arrangements',
                  'books.authors',
-                 'books.file'
-                ]);
-           return view('library', ['books' => $books]) ;
+                 'books.file',
+                 'books.id',
+                 
+           ]);
+
+           return view('library', 
+           ['books' => $books,
+            'reviews' => $reviews
+           ]) ;
         }
 
   
-        public function tracks() {
-      
-                return view('tracks');
+        public function book(Request $request) {
+             
+             $current_page = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
+             
+             $book =  DB::table('books')
+             ->select('*')
+             ->whereRaw('id =' . $current_page)->first();
+
+             return view('book', ['book' => $book]);
         
            
         }

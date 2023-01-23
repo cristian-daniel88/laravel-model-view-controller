@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('genre_id');
+            $table->integer('instrument_id');
             $table->string('title');
-            $table->integer('category_id');
             $table->string('authors');
-            $table->longText('description');
+            $table->string('musical_arrangements');
             $table->string('image');
             $table->string('file');
             $table->timestamps();

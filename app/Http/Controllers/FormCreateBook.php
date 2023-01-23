@@ -3,34 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Books;
-use App\Models\Categories;
+
+use App\Models\Genres;
+use App\Models\Instruments;
 use Illuminate\Http\Request;
 
 class FormCreateBook extends Controller
 {
  public function index() {
-        return view('form-create-book',  ['categories' => Categories::all()]);  
+        return view('form-create-book',  
+        ['genres' => Genres::all(),
+         'instruments' => Instruments::all()
+        ]);  
  }
 
  public function store(Request $request) {
 
-       if(
+       // if(
        
-           !$request->input('title') or
-           !$request->input('category') or
-           !$request->input('description') or
-           !$request->input('authors') or
-           !$request->file('image') or
-           !$request->file('file') 
+       //     !$request->input('title') or
+       //     !$request->input('genre') or
+       //     !$request->input('description') or
+       //     !$request->input('authors') or
+       //     !$request->file('image') or
+       //     !$request->file('file') 
 
-        ) 
-       {
-              return view('form-create-book',  [
-                     'categories' => Categories::all(),
-                     'failed' => 'Boock sent failed, please check the fields' 
-              ]);  
+       //  ) 
+       // {
+       //        return view('form-create-book',  [
+                     
+       //               'genres' => Genres::all(),
+       //               'failed' => 'Boock sent failed, please check the fields' 
+       //        ]);  
               
-       }
+       // }
 
 
 
@@ -49,9 +55,10 @@ class FormCreateBook extends Controller
 
        $book = new Books();
        $book->title = $request->input('title');
-       $book->category_id = $request->input('category');
-       $book->description = $request->input('description');
+       $book->genre_id = $request->input('genre');
+       $book->instrument_id = $request->input('instrument');
        $book->authors = $request->input('authors');
+       $book->musical_arrangements = $request->input('arrangements');
        $book->image = $nameImg;
        $book->file = $nameFile;
        $book->save(); 
@@ -60,7 +67,8 @@ class FormCreateBook extends Controller
 
 
        return view('form-create-book',  [
-              'categories' => Categories::all(),
+              'instruments'=> Instruments::all(),
+              'genres' => Genres::all(),
               'succesfull' => 'Book sent' 
        
        ]);  

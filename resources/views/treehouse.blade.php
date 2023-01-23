@@ -3,7 +3,7 @@
 @include('head')
 <body>
 @include('nav')
-<main role="main" class="container">
+<main role="main" class="">
     @yield('body')
 </main>
 @include('footer')
