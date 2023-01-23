@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2023 at 12:37 AM
+-- Generation Time: Jan 23, 2023 at 03:09 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -46,7 +46,10 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `genre_id`, `instrument_id`, `title`, `authors`, `musical_arrangements`, `image`, `file`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 'Libertango', 'Astor Piazzolla', 'Andrey Nosov', 'piazzolla.jpg', '114-Libertango-A.Piazzolla.pdf', '2023-01-22 13:24:27', '2023-01-22 13:24:27'),
-(2, 3, 1, 'Bourrée', 'J. S. Bach', 'A. W. Mathews', 'Johann_Sebastian_Bach.jpg', 'AAA-Bach-Bourree_BWV_996-ClassicalGuitarShed.pdf', '2023-01-22 22:43:38', '2023-01-22 22:43:38');
+(2, 3, 1, 'Bourrée', 'J. S. Bach', 'A. W. Mathews', 'Johann_Sebastian_Bach.jpg', 'AAA-Bach-Bourree_BWV_996-ClassicalGuitarShed.pdf', '2023-01-22 22:43:38', '2023-01-22 22:43:38'),
+(3, 1, 1, 'Oblivion', 'Astor Piazzolla', 'Ryuji Kunimatsu', 'piazzolla.jpg', 'piazzolla-oblivion.pdf', '2023-01-22 23:43:30', '2023-01-22 23:43:30'),
+(4, 1, 1, 'Tangos y milongas', 'Various authors', 'Jorge Morel', 'argentine-tango.jpg', 'vdocuments.net_jorge-morel-tangos-milongas.pdf', '2023-01-22 23:51:05', '2023-01-22 23:51:05'),
+(5, 1, 1, 'Flor de lino', 'Héctor Stamponi', 'Analia Rego', 'Stamponi.jpg', 'Flor de lino.pdf', '2023-01-23 00:08:03', '2023-01-23 00:08:03');
 
 -- --------------------------------------------------------
 
@@ -210,7 +213,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `genres`
