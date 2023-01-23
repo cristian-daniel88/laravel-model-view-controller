@@ -6,11 +6,14 @@ use App\Models\Books;
 use App\Models\Reviews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AppController extends Controller
 {
         
         public function index() {
+          // Storage::delete('public/files/aa.png');
+
            $reviews = Reviews::all();
            $books = Books::
              join('genres', 'genres.id', '=', 'books.genre_id')

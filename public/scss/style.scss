@@ -5,6 +5,8 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 5000;
+    height: auto;
+    padding: 10px;
   }
   
   body {
@@ -148,7 +150,7 @@ nav {
 
   .form-search_lg {
     display: flex;
-    margin-left: 35px;
+    margin-left: 20px;
     select {
       border: none;
       box-sizing: border-box;
