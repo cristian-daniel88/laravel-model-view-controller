@@ -25,7 +25,9 @@
     @if ($book->genre  == $array[$key] )
     
     <div class="container-card shadow-lg bg-slate-100
-     transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300
+     
+     border-4 border-light-blue-500 border-opacity-25
+     rounded
      ">
      <div class="column1-card">
          <div class="category_container">
@@ -66,60 +68,60 @@
 if(!empty($countRating)) {
     
     if(array_sum($countRating)/count($countRating) >= 1 ) {
-        echo ' <i class="fa-solid fa-star text-yellow-500"></i>';
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
     } else {
         if (array_sum($countRating)/count($countRating) >= 0.5) {
-            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500"></i>';
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
-            echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
     }
     
     if(array_sum($countRating)/count($countRating) >= 2 ) {
-        echo ' <i class="fa-solid fa-star text-yellow-500"></i>';
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
     } else {
         if (array_sum($countRating)/count($countRating) >= 1.5) {
-            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500"></i>';
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
-            echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
     }
     
     if(array_sum($countRating)/count($countRating) >= 3 ) {
-        echo ' <i class="fa-solid fa-star text-yellow-500"></i>';
+        echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
     } else {
         if (array_sum($countRating)/count($countRating) >= 2.5) {
-            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500"></i>';
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
-            echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
     }
     
     if(array_sum($countRating)/count($countRating) >= 4 ) {
-        echo ' <i class="fa-solid fa-star text-yellow-500"></i>';
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
     } else {
         if (array_sum($countRating)/count($countRating) >= 3.5) {
-            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500"></i>';
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
-            echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
     }
     
     if(array_sum($countRating)/count($countRating) >= 5 ) {
-        echo ' <i class="fa-solid fa-star text-yellow-500"></i>';
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
     } else {
         if (array_sum($countRating)/count($countRating) >= 4.5) {
-            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500"></i>';
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
-            echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
     }
 } else {
-    echo '<i class="fa-regular fa-star text-yellow-500"></i>';
-    echo '<i class="fa-regular fa-star text-yellow-500"></i>';
-    echo '<i class="fa-regular fa-star text-yellow-500"></i>';
-    echo '<i class="fa-regular fa-star text-yellow-500"></i>';
-    echo '<i class="fa-regular fa-star text-yellow-500"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
 }
 
 

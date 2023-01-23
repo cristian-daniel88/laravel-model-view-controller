@@ -3,9 +3,9 @@
 @include('head')
 <body>
 @include('nav')
-<main role="main" class="">
+<div  class="main">
     @yield('body')
-</main>
+</div>
 @include('footer')
 </body>
 

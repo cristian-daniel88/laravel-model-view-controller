@@ -6,6 +6,12 @@ nav {
 
 body {
   background-color: #fff;
+  display: flex;
+}
+
+.main {
+  margin: auto !important;
+  width: 100%;
 }
 
 h1 {
@@ -39,9 +45,13 @@ h1 {
     display: none;
   }
 }
+@media only screen and (max-width: 450px) {
+  .star {
+    font-size: 12px;
+  }
+}
 .container-card {
   max-width: 300px;
-  height: 210px;
   display: flex;
   justify-content: space-between;
   padding: 1px;
@@ -53,7 +63,7 @@ h1 {
 }
 
 .column1-card {
-  width: 100px;
+  width: 35%;
   padding: 2px;
   display: flex;
   flex-direction: column;
@@ -70,13 +80,13 @@ h1 {
 }
 
 .column2-card {
-  width: 190px;
+  width: 50%;
   padding: 5px;
 }
 
 .column2-card a {
   margin: 10px;
-  padding: 0 50px;
+  padding: 0 20px;
   cursor: pointer;
 }
 
