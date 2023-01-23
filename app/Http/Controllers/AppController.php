@@ -12,7 +12,7 @@ class AppController extends Controller
 {
         
         public function index() {
-          // Storage::delete('public/files/aa.png');
+           //Storage::delete('public/images/pp.jpg');
 
            $reviews = Reviews::all();
            $books = Books::

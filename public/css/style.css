@@ -3,7 +3,7 @@ nav {
   width: 100%;
   z-index: 5000;
   height: auto;
-  padding: 10px;
+  padding: 0px;
 }
 
 body {
@@ -115,21 +115,27 @@ h1 {
 }
 
 .form-search_lg {
+  width: 10px !important;
   display: flex;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .form-search_lg select {
   border: none;
   box-sizing: border-box;
   border-radius: 0.5rem 0 0 0.5rem;
-  border-right: solid 1px rgb(101, 192, 124);
   cursor: pointer;
-  background-color: rgb(232, 228, 194);
-  padding-left: 10px;
+  background-color: rgb(230, 230, 244);
+  padding-left: 2px;
+  font-size: 10px;
+}
+.form-search_lg select:focus {
+  outline: none !important;
+  border: none;
 }
 .form-search_lg .input-search_lg {
   box-sizing: border-box;
   border: none;
+  width: 135px;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.5px;

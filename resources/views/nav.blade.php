@@ -85,9 +85,9 @@
           </div>
         </div>
         <form method="GET" action="" class="form-search_lg">
-          <select name="search" id="">
+          <select name="filter" id="">
           <option value="all">All</option>
-          <option value="">Genre</option>
+          <option value="genres">Genre</option>
           <option value="">Author</option>
           <option value="">Instruments</option>
           </select>
