@@ -36,8 +36,6 @@
              bg-slate-200
              ">
              {{ucfirst($book->genre)}}
-             {{-- {{$book->rating}} --}}
-             
             </p>       
         </div>
         <div class="img-container">

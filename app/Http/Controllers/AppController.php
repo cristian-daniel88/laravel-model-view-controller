@@ -44,9 +44,15 @@ class AppController extends Controller
              
              $current_page = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
              
+             
              $book =  DB::table('books')
              ->select('*')
              ->whereRaw('id =' . $current_page)->first();
+
+
+             if ($book == null) {
+              return view('book', ['book' => 'null']);
+             }
 
              return view('book', ['book' => $book]);
         

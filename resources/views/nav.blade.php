@@ -72,6 +72,18 @@
 
           </div>
         </div>
+        <form method="GET" action="" class="form-search_lg">
+          <select name="search" id="">
+          <option value="all">All</option>
+          <option value="">Genre</option>
+          <option value="">Author</option>
+          <option value="">Instruments</option>
+          </select>
+          <input type="text" class="input-search_lg">
+          <button type="submit" class="button-search_lg">
+            <i class="fa-solid fa-magnifying-glass"></i>  
+          </button>     
+        </form>
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
