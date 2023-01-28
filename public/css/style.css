@@ -155,6 +155,24 @@ h1 {
   color: #fff;
 }
 
+.book-container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+}
+.book-container h5 {
+  text-align: center;
+}
+.book-container .column1-book {
+  padding: 0 10px;
+  padding-bottom: 20px;
+}
+.book-container .image-book_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 1000px) {
   .form-search_lg {
     display: none;

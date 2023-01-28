@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Books;
+use App\Models\Genres;
+use App\Models\Instruments;
 use App\Models\Reviews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,14 +52,50 @@ class AppController extends Controller
              
              $book =  DB::table('books')
              ->select('*')
+             
              ->whereRaw('id =' . $current_page)->first();
 
+             
 
              if ($book == null) {
               return view('book', ['book' => 'null']);
              }
 
-             return view('book', ['book' => $book]);
+
+             $genre = Genres::select('*')
+             ->whereRaw('id =' . $book->genre_id)->first();
+
+             $forInst = Instruments::select('*')
+             ->whereRaw('id =' . $book->instrument_id)->first();
+
+             $reviews = Reviews::all();
+             $reviewsArray = array();
+             
+             foreach ($reviews as $review) {
+               if ($review->book_id == $book->id) {
+                array_push($reviewsArray, $review );
+               }
+             }
+
+             $rating = Reviews::all();
+             $ratingArray = array();
+             foreach ($rating as $rat) {
+               if ($rat->book_id == $book->id) {
+                array_push($ratingArray, $rat->rating);
+               }
+             }
+
+             $avgRating = array_sum($ratingArray)/count($ratingArray);
+             
+           
+             
+
+            
+
+             return view('book', 
+             ['book' => $book],
+             ['otherTables'=> [$genre, $forInst, $reviewsArray, $avgRating]], 
+             );
         
            
         }

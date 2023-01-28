@@ -195,10 +195,27 @@ nav {
         
       }  
     }
+  }
 
+  .book-container {
+    width: 95%;
+    margin: auto;
+    display: flex;
 
+    h5 {
+      text-align: center;
+    }
 
-
+    .column1-book {
+      padding: 0 10px;
+      padding-bottom: 20px;
+    }
+    .image-book_container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+ 
   }
 
   @media only screen and (max-width: 1000px) {
