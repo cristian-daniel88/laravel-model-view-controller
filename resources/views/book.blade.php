@@ -61,74 +61,90 @@
         </div>
 
         <div class="column2-book column1-book max-w-sm bg-white border border-gray-200 rounded-lg shadow-md 
-        dark:bg-gray-800 dark:border-gray-700
+        dark:bg-gray-800 dark:border-gray-700 
         ">
-        <p class="font-normal text-gray-700 dark:text-gray-400">
-            <b>Rating: </b> 
+
+        <div class="font-normal text-gray-700 
+        dark:text-gray-400 flex  w-52">
+        <b>Rating:</b>
+        <div class="flex justify-around w-2/5 items-center">
+
             @php
-            if(!empty($otherTables[3])) {
-                         
+        if(!empty($otherTables[3])) {
+            
             if($otherTables[3] >= 1 ) {
-                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-            } else {
-                if ($otherTables[3] >= 0.5) {
-                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                }
-            }
-            
-            if($otherTables[3] >= 2 ) {
-                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-            } else {
-                if ($otherTables[3] >= 1.5) {
-                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                }
-            }
-            
-            if($otherTables[3] >= 3 ) {
-                echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
-            } else {
-                if ($otherTables[3] >= 2.5) {
-                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                }
-            }
-            
-            if($otherTables[3] >= 4 ) {
-                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-            } else {
-                if ($otherTables[3] >= 3.5) {
-                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                }
-            }
-            
-            if($otherTables[3] >= 5 ) {
-                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-            } else {
-                if ($otherTables[3] >= 4.5) {
-                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                }
-            }
-            } else {
-            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+    } else {
+        if ($otherTables[3] >= 0.5) {
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+        } else {
             echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
+    }
+    
+    if($otherTables[3] >= 2 ) {
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+    } else {
+        if ($otherTables[3] >= 1.5) {
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+        } else {
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+        }
+    }
+    
+    if($otherTables[3] >= 3 ) {
+        echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
+    } else {
+        if ($otherTables[3] >= 2.5) {
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+        } else {
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+        }
+    }
+    
+    if($otherTables[3] >= 4 ) {
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+    } else {
+        if ($otherTables[3] >= 3.5) {
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+        } else {
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+        }
+    }
+    
+    if($otherTables[3] >= 5 ) {
+        echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+    } else {
+        if ($otherTables[3] >= 4.5) {
+            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+        } else {
+            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+        }
+    }
+} else {
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+}
+
+@endphp
+</div>
+
+</div>
+
+<div class="">
+    <b>Reviews: </b>
+<div class="overflow-y-auto h-32">
+    <form action="">
+
+         
         
-        
-        @endphp
-        </p>    
-   
+    </form>
+</div>
+
+</div>    
  </div>
 
 </div>

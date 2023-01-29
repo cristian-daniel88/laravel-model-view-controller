@@ -159,6 +159,7 @@ h1 {
   width: 95%;
   margin: auto;
   display: flex;
+  justify-content: center;
 }
 .book-container h5 {
   text-align: center;

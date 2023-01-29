@@ -56,11 +56,14 @@
         @if ($book->id == $review->book_id)
         @php
            array_push($countRating, $review->rating);
-          @endphp
-             @endif
-             @endforeach
-             @php 
+        @endphp
+        @endif
+        @endforeach
 
+
+<div class="flex justify-around w-4/5">
+
+    @php 
 if(!empty($countRating)) {
     
     if(array_sum($countRating)/count($countRating) >= 1 ) {
@@ -121,7 +124,10 @@ if(!empty($countRating)) {
 }
 
 
+
+
 @endphp
+ </div>
 </div>
 
 

@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(GenresSeeder::class);
         //$this->call(InstrumentsSeeder::class);
-        $this->call(ReviewsSeeder::class);
+        //$this->call(ReviewsSeeder::class);
     }
 }

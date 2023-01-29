@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\FormCreateBook;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AppController::class, 'index']);
+Route::get('/', [LoginController::class, 'index']);
+
+
+Route::post('/', [LoginController::class, 'login']);
+
+
+
+Route::get('/home', [AppController::class, 'index']);
 
 
 Route::get('/book', [AppController::class, 'book']);

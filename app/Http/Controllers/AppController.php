@@ -69,6 +69,7 @@ class AppController extends Controller
              ->whereRaw('id =' . $book->instrument_id)->first();
 
              $reviews = Reviews::all();
+             
              $reviewsArray = array();
              
              foreach ($reviews as $review) {
@@ -83,14 +84,12 @@ class AppController extends Controller
                if ($rat->book_id == $book->id) {
                 array_push($ratingArray, $rat->rating);
                }
-             }
-
-             $avgRating = array_sum($ratingArray)/count($ratingArray);
+              }
+              $avgRating = array_sum($ratingArray)/
+              (count($ratingArray) == 0 ? 1 : count($ratingArray) );
+     
              
            
-             
-
-            
 
              return view('book', 
              ['book' => $book],
