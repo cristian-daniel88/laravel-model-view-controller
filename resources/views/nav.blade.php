@@ -61,7 +61,7 @@
           <div class="flex space-x-4">
 
 
-            <a href="{{env('app_url')}}/" class="
+            <a href="/home" class="
                       text-gray-300 hover:bg-gray-700 
                       hover:text-white px-3 
                       py-2 rounded-md 
@@ -69,7 +69,7 @@
                       {{request()->is('/') ? 'text-white px-3 bg-gray-700' : ''}}
                       ">Books</a>
            
-            <a href="{{env('app_url')}}/create" class="
+            <a href="/create" class="
             text-gray-300 hover:bg-gray-700 
             hover:text-white px-3 
             py-2 rounded-md 
@@ -127,9 +127,9 @@
           tabindex="-1"
           id="profileMenu"
           >
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profilee</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-0"><?php echo $_SESSION["username"]; ?></a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            <a href="/"  class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
           </div>
         </div>
       </div>

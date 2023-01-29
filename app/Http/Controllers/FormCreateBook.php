@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 class FormCreateBook extends Controller
 {
  public function index() {
+       session_start();
+       if (empty($_SESSION["username"])) {
+         return redirect()->action([LoginController::class, 'index']);
+       }
+
         return view('form-create-book',  
         ['genres' => Genres::all(),
          'instruments' => Instruments::all()

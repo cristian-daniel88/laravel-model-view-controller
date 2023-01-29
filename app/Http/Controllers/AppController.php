@@ -14,7 +14,12 @@ class AppController extends Controller
 {
         
         public function index() {
-           //Storage::delete('public/images/pp.jpg');
+          //Storage::delete('public/images/pp.jpg');
+
+          session_start();
+          if (empty($_SESSION["username"])) {
+            return redirect()->action([LoginController::class, 'index']);
+          }
 
            $reviews = Reviews::all();
            $books = Books::
@@ -46,6 +51,11 @@ class AppController extends Controller
 
   
         public function book(Request $request) {
+
+            session_start();
+            if (empty($_SESSION["username"])) {
+            return redirect()->action([LoginController::class, 'index']);
+            }
              
              $current_page = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
              

@@ -14,12 +14,18 @@ class LoginController extends Controller
      */
     public function index()
     {
+        session_start(); 
+        $_SESSION["username"] = '';
+        $_SESSION["id"] = '';
         return view('login');
     }
 
 
     public function login(Request $request ) 
     {
+        session_start(); 
+        $_SESSION["username"] = '';
+        $_SESSION["id"] = '';
         $users = User::all();
         
         foreach ($users as $user) {
@@ -29,8 +35,11 @@ class LoginController extends Controller
             password_verify($request->input('password'), $user->password_hash)
             ) 
             {
-                
-                return redirect('/home');
+
+            $_SESSION["username"] = $user->username;
+            $_SESSION["id"] = $user->id;
+
+            return redirect('/home');
             } else {
               return  view('login', ['error' => 'User & Password incorrect']);
             }
