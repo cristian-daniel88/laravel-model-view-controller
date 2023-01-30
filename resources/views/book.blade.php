@@ -139,101 +139,103 @@
     <b>Reviews: </b>
 <div class="overflow-y-auto h-50">
     <div>
-        @php
-            //dd($otherTables[2])
-        @endphp
+
         @foreach ($otherTables[2] as $review)
-            <div class="p-3">
-                <div class="bg-slate-200 float-left px-3 rounded"> {{$review->user}} </div>:
-                    <i>{{$review->review}} Lorem ipsum dolor sit 
+           <div id="{{$review->id}}">
+
+               <div class="p-3">
+                   <div class="bg-slate-200 float-left px-3 rounded"> {{$review->user}} </div>:
+                   <i>{{$review->review}} Lorem ipsum dolor sit 
                     amet consectetur adipisicing elit. Harum, 
                     incidunt dolore perferendis deleniti ipsam 
                     eveniet fugiat quam magnam eaque modi. Recusandae, 
                     unde soluta? Porro voluptas vitae ex maiores nemo officia?
-                    </i>
-                    <div class="flex">
-                        Rating: &nbsp;
-                        <div class="rating-user">
-                            @php
+                </i>
+                <div class="flex">
+                    Rating: &nbsp;
+                    <div class="rating-user">
+                        @php
                             if(!empty($review->rating)) {
-                             if($review->rating >= 1 ) {
+                                if($review->rating >= 1 ) {
                              echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
                             } else {
-                            if ($review->rating >= 0.5) {
-                            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                                if ($review->rating >= 0.5) {
+                                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
                            } else {
                             echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
                             }
                           }
+                          
+                          if($review->rating >= 2 ) {
+                              echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
+                            } else {
+                                if ($review->rating >= 1.5) {
+                                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                                } else {
+                                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                                }
+                            }
+                            
+                            if($review->rating >= 3 ) {
+                                echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
+                            } else {
+                                if ($review->rating >= 2.5) {
+                                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                                } else {
+                                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                                }
+                            }
     
-                     if($review->rating >= 2 ) {
-                     echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
-                     } else {
-                     if ($review->rating >= 1.5) {
-                     echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                     } else {
-                     echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                     }
-                     }
-    
-                  if($review->rating >= 3 ) {
-                   echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
-                  } else {
-                  if ($review->rating >= 2.5) {
-                  echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                  } else {
-                   echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                  }
-                  }
-    
-                 if($review->rating >= 4 ) {
-                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-                } else {
-                if ($review->rating >= 3.5) {
-                echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-               echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                            if($review->rating >= 4 ) {
+                                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+                            } else {
+                                if ($review->rating >= 3.5) {
+                                    echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                                } else {
+                                    echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
                 }
                 } 
     
                 if($review->rating >= 5 ) {
-                 echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+                    echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
                 } else {
-                 if ($review->rating >= 4.5) {
-               echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
-                } else {
-               echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                    if ($review->rating >= 4.5) {
+                        echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                    } else {
+                        echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                    }
                 }
-                }
-                 } else {
-                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
-}
-                            @endphp
-                        </div>
-                    </div>
-                    @if ($review->user_id == $_SESSION["id"])
-                        <div>
-                            <button class="m-2">
-                                <i class="fas fa-edit"></i>
-                            </button>
-
-                            <button>
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    @endif
-                    
+            } else {
+                echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+            }
+            @endphp
                 </div>
-                
-                <hr class="w-48 h-1 mx-auto  bg-gray-200 border-0 rounded dark:bg-gray-700">
-                @endforeach
             </div>
+            @if ($review->user_id == $_SESSION["id"])
+            <div>
+                <a class="m-2 cursor-pointer">
+                    <i class="fas fa-edit"></i>
+                </a>
+                
+                <a>
+                    <i class="fas fa-trash cursor-pointer"></i>
+                </a>
+            </div>
+            @endif
+            
         </div>
-        <br>
+        
+        <hr class="w-48 h-1 mx-auto  bg-gray-200 border-0 rounded dark:bg-gray-700">
+        
+        </div>
+        @endforeach
+    </div>
+</div>
+<br>
 
 
 
