@@ -145,12 +145,7 @@
 
                <div class="p-3">
                    <div class="bg-slate-200 float-left px-3 rounded"> {{$review->user}} </div>:
-                   <i>{{$review->review}} Lorem ipsum dolor sit 
-                    amet consectetur adipisicing elit. Harum, 
-                    incidunt dolore perferendis deleniti ipsam 
-                    eveniet fugiat quam magnam eaque modi. Recusandae, 
-                    unde soluta? Porro voluptas vitae ex maiores nemo officia?
-                </i>
+                   <i>{{$review->review}}</i>
                 <div class="flex">
                     Rating: &nbsp;
                     <div class="rating-user">
@@ -217,7 +212,7 @@
             </div>
             @if ($review->user_id == $_SESSION["id"])
             <div>
-                <a class="m-2 cursor-pointer">
+                <a class="m-2 cursor-pointer" href="/book?id=1&edit=1">
                     <i class="fas fa-edit"></i>
                 </a>
                 
@@ -240,13 +235,41 @@
 
 
 </div>  
-<form action="" class="review-textarea">
+<form action="/book?id={{$book->id}}" class="review-textarea" method="post">
+    @csrf 
     <div>
-
-        <textarea name=""cols="100" rows="3"></textarea>
+       
+        <label for="review" class="block mb-2 text-sm 
+        font-medium text-gray-900 dark:text-white">
+            New review:
+        </label>
+        <textarea name="review"cols="100" rows="3" 
+        class="bg-gray-50 border border-gray-300 
+        text-gray-900 text-sm rounded-lg 
+        focus:ring-blue-500 focus:border-blue-500 
+        block w-full p-2.5 dark:bg-gray-700 
+        dark:border-gray-600 dark:placeholder-gray-400 
+        dark:text-white dark:focus:ring-blue-500 
+        dark:focus:border-blue-500"
+        
+        >
+        </textarea>
         <br>
+        <label for="rating" class="block mb-2 text-sm font-medium 
+        text-gray-900 dark:text-white">
+        Rating:
+        </label>
+        <select name="rating" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="1">&#9733;</option>
+            <option value="2">&#9733;&#9733;</option>
+            <option value="3">&#9733;&#9733;&#9733;</option>
+            <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
+            <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+        </select>
+        <br>
+        
         <button type="submit"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        class="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
         Send
         </button>
 

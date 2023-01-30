@@ -190,9 +190,15 @@ h1 {
     display: none;
   }
 }
+.rating-user {
+  width: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .rating-user i {
   color: #1f2937;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .review-textarea {
@@ -204,6 +210,9 @@ h1 {
 .review-textarea textarea {
   resize: none;
   width: 100%;
+}
+.review-textarea input {
+  user-select: none;
 }
 
 /*# sourceMappingURL=style.css.map */

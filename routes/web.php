@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\FormCreateBook;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SendReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,8 @@ Route::get('/home', [AppController::class, 'index']);
 
 
 Route::get('/book', [AppController::class, 'book']);
+
+Route::post('/book', [SendReviewController::class, 'add']);
 
 
 Route::get('/community', function () {
