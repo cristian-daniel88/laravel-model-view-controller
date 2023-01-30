@@ -53,38 +53,39 @@
             Download
             </a>
            </div>
+
         
         
         
 
 
         </div>
-
-        <div class="column2-book column1-book max-w-sm bg-white border border-gray-200 rounded-lg shadow-md 
+        
+        <div class="column2-book   bg-white border border-gray-200 rounded-lg shadow-md 
         dark:bg-gray-800 dark:border-gray-700 
         ">
 
         <div class="font-normal text-gray-700 
         dark:text-gray-400 flex  w-52">
         <b>Rating:</b>
-        <div class="flex justify-around w-2/5 items-center">
+        <div class="flex justify-around w-2/5 items-center ">
 
             @php
         if(!empty($otherTables[3])) {
             
             if($otherTables[3] >= 1 ) {
         echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-    } else {
+        } else {
         if ($otherTables[3] >= 0.5) {
             echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
             echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
         }
-    }
+        }
     
-    if($otherTables[3] >= 2 ) {
+        if($otherTables[3] >= 2 ) {
         echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
-    } else {
+       } else {
         if ($otherTables[3] >= 1.5) {
             echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
         } else {
@@ -136,15 +137,121 @@
 
 <div class="">
     <b>Reviews: </b>
-<div class="overflow-y-auto h-32">
-    <form action="">
+<div class="overflow-y-auto h-50">
+    <div>
+        @php
+            //dd($otherTables[2])
+        @endphp
+        @foreach ($otherTables[2] as $review)
+            <div class="p-3">
+                <div class="bg-slate-200 float-left px-3 rounded"> {{$review->user}} </div>:
+                    <i>{{$review->review}} Lorem ipsum dolor sit 
+                    amet consectetur adipisicing elit. Harum, 
+                    incidunt dolore perferendis deleniti ipsam 
+                    eveniet fugiat quam magnam eaque modi. Recusandae, 
+                    unde soluta? Porro voluptas vitae ex maiores nemo officia?
+                    </i>
+                    <div class="flex">
+                        Rating: &nbsp;
+                        <div class="rating-user">
+                            @php
+                            if(!empty($review->rating)) {
+                             if($review->rating >= 1 ) {
+                             echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+                            } else {
+                            if ($review->rating >= 0.5) {
+                            echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                           } else {
+                            echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                            }
+                          }
+    
+                     if($review->rating >= 2 ) {
+                     echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
+                     } else {
+                     if ($review->rating >= 1.5) {
+                     echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                     } else {
+                     echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                     }
+                     }
+    
+                  if($review->rating >= 3 ) {
+                   echo '<i class="fa-solid fa-star text-yellow-500 star"></i>';
+                  } else {
+                  if ($review->rating >= 2.5) {
+                  echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                  } else {
+                   echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                  }
+                  }
+    
+                 if($review->rating >= 4 ) {
+                echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+                } else {
+                if ($review->rating >= 3.5) {
+                echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                } else {
+               echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                }
+                } 
+    
+                if($review->rating >= 5 ) {
+                 echo ' <i class="fa-solid fa-star text-yellow-500 star"></i>';
+                } else {
+                 if ($review->rating >= 4.5) {
+               echo '<i class="fa-solid fa-star-half-stroke text-yellow-500 star"></i>';
+                } else {
+               echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                }
+                }
+                 } else {
+                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+                 echo '<i class="fa-regular fa-star text-yellow-500 star"></i>';
+}
+                            @endphp
+                        </div>
+                    </div>
+                    @if ($review->user_id == $_SESSION["id"])
+                        <div>
+                            <button class="m-2">
+                                <i class="fas fa-edit"></i>
+                            </button>
 
-         
-        
-    </form>
-</div>
+                            <button>
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    @endif
+                    
+                </div>
+                
+                <hr class="w-48 h-1 mx-auto  bg-gray-200 border-0 rounded dark:bg-gray-700">
+                @endforeach
+            </div>
+        </div>
+        <br>
 
-</div>    
+
+
+</div>  
+<form action="" class="review-textarea">
+    <div>
+
+        <textarea name=""cols="100" rows="3"></textarea>
+        <br>
+        <button type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        Send
+        </button>
+
+       
+    </div>
+</form>
+
  </div>
 
 </div>

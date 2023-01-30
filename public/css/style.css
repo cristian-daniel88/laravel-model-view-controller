@@ -159,14 +159,25 @@ h1 {
   width: 95%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .book-container h5 {
   text-align: center;
 }
 .book-container .column1-book {
+  margin-bottom: 50px;
+  padding: 10px;
+}
+.book-container .column2-book {
   padding: 0 10px;
   padding-bottom: 20px;
+  width: 70%;
+}
+@media (max-width: 500px) {
+  .book-container .column2-book {
+    width: 100%;
+  }
 }
 .book-container .image-book_container {
   width: 100%;
@@ -178,6 +189,21 @@ h1 {
   .form-search_lg {
     display: none;
   }
+}
+.rating-user i {
+  color: #1f2937;
+  font-size: 8px;
+}
+
+.review-textarea {
+  display: flex;
+}
+.review-textarea div {
+  margin: auto;
+}
+.review-textarea textarea {
+  resize: none;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

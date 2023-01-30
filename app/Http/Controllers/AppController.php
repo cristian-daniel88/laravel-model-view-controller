@@ -82,15 +82,28 @@ class AppController extends Controller
              
              $reviewsArray = array();
              
-             foreach ($reviews as $review) {
-               if ($review->book_id == $book->id) {
-                array_push($reviewsArray, $review );
-               }
-             }
 
-             $rating = Reviews::all();
+             $reviewsAll = Reviews::
+             join('users', 'users.id', '=', 'reviews.user_id')
+             ->get([
+                  'reviews.id',
+                  'reviews.review',
+                  'reviews.rating',
+                  'reviews.user_id',
+                  'reviews.book_id',
+                  'users.username AS user',
+                  'users.id AS userId'
+                ]);
+
+                foreach ($reviewsAll as $review) {
+                  if ($review->book_id == $book->id) {
+                   array_push($reviewsArray, $review );
+                  }
+                }
+   
+            
              $ratingArray = array();
-             foreach ($rating as $rat) {
+             foreach ( $reviewsAll as $rat) {
                if ($rat->book_id == $book->id) {
                 array_push($ratingArray, $rat->rating);
                }

@@ -201,15 +201,34 @@ nav {
     width: 95%;
     margin: auto;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
     h5 {
       text-align: center;
     }
 
     .column1-book {
+      margin-bottom: 50px;
+      padding: 10px;
+    }
+    .column2-book{
       padding: 0 10px;
       padding-bottom: 20px;
+      width: 70%;
     }
+
+    @media (max-width: 500px) {
+      .column2-book {
+        width: 100%;
+      }
+    }
+
+
+
+
+
+    
     .image-book_container {
       width: 100%;
       display: flex;
@@ -226,7 +245,27 @@ nav {
 
   }
 
-  
+  .rating-user {
+    i{
+      color: #1f2937;
+      font-size: 8px;
+     
+    }
+  }
+
+
+  .review-textarea {
+    display: flex;
+    div {
+      margin: auto;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+    }
+  }
+
    
   
   
