@@ -78,6 +78,7 @@ class AppController extends Controller
 
           $reviewsAll = Reviews::
           join('users', 'users.id', '=', 'reviews.user_id')
+          ->orderby('reviews.created_at', 'DESC')
           ->get([
                'reviews.id',
                'reviews.review',

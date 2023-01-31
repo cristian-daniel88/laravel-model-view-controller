@@ -137,7 +137,7 @@
 
 <div class="">
     <b>Reviews: </b>
-<div class="overflow-y-auto h-50">
+<div class="overflow-y-auto h-52">
     <div>
 
         @foreach ($otherTables[2] as $review)
