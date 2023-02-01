@@ -31,6 +31,10 @@ Route::get('/book', [AppController::class, 'book']);
 
 Route::post('/book', [SendReviewController::class, 'add']);
 
+Route::post('/delete/review', [SendReviewController::class, 'delete']);
+
+
+
 
 Route::get('/community', function () {
     return view('community');
