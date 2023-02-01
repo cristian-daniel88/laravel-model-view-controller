@@ -171,11 +171,10 @@ h1 {
 }
 .book-container .column2-book {
   padding: 0 10px;
-  padding-bottom: 20px;
-  width: 70%;
+  max-width: 50%;
 }
 @media (max-width: 500px) {
-  .book-container .column2-book {
+  .book-container .column2-book, .book-container .column2-book {
     width: 100%;
   }
 }

@@ -173,7 +173,7 @@ if(!empty($countRating)) {
             py-2 px-4 border border-blue-700 rounded
             w-36
             "
-            href="/book?id={{$book->id}}"
+            href="{{env('app_url')}}book?id={{$book->id}}"
             >
             Download
     </a>

@@ -61,7 +61,7 @@
           <div class="flex space-x-4">
 
 
-            <a href="/home" class="
+            <a href="{{env('app_url')}}home" class="
                       text-gray-300 hover:bg-gray-700 
                       hover:text-white px-3 
                       py-2 rounded-md 
@@ -69,7 +69,7 @@
                       {{request()->is('/') ? 'text-white px-3 bg-gray-700' : ''}}
                       ">Books</a>
            
-            <a href="/create" class="
+            <a href="{{env('app_url')}}create" class="
             text-gray-300 hover:bg-gray-700 
             hover:text-white px-3 
             py-2 rounded-md 
@@ -129,7 +129,7 @@
           >
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-0"><?php echo $_SESSION["username"]; ?></a>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="/"  class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            <a href="{{env('app_url')}}"  class="block px-4 py-2 text-sm text-gray-700 aProfile" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
           </div>
         </div>
       </div>
@@ -142,9 +142,9 @@
 <div class="" id="mobile-menu">
   <div class="space-y-1 px-2 pt-2 pb-3" >
     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-    <a href="{{env('app_url')}}/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium " aria-current="page">Books</a>
+    <a href="{{env('app_url')}}home" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium " aria-current="page">Books</a>
 
-    <a href="{{env('app_url')}}/create" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Book</a>
+    <a href="{{env('app_url')}}create" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Book</a>
 
     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Backing tracks</a>
 

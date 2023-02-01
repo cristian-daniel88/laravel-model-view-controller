@@ -19,7 +19,7 @@
         <br>
         <form class="bg-white shadow-md 
          rounded px-8 pt-6 pb-8 mb-4"
-        method="POST" action="/"
+        method="POST" action={{env('app_url')}}
         >
         @csrf
           <div class="mb-4">

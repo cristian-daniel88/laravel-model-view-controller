@@ -235,7 +235,7 @@
 
 
 </div>  
-<form action="/book?id={{$book->id}}" class="review-textarea" method="post">
+<form action="{{env('app_url')}}book?id={{$book->id}}" class="review-textarea" method="post">
     @csrf 
     <div>
        
@@ -269,7 +269,8 @@
         <br>
         
         <button type="submit"
-        class="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        class="bg-blue-500  hover:bg-blue-700 text-white 
+        font-bold py-2 px-4 border border-blue-700 rounded">
         Send
         </button>
 

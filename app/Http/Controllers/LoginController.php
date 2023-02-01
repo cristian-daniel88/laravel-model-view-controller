@@ -40,6 +40,7 @@ class LoginController extends Controller
             $_SESSION["id"] = $user->id;
 
             return redirect('/home');
+            //return redirect()->action([AppController::class, 'index']);
             } else {
               return  view('login', ['error' => 'User & Password incorrect']);
             }
