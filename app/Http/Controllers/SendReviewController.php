@@ -25,70 +25,13 @@ class SendReviewController extends AppController
       }
 
     public function delete (Request $request) {
-      
-      
-      Reviews::find($request->input('reviewId'))->delete();
-      
       session_start();
-        $book =  DB::table('books')
-          ->select('*')
-          
-          ->whereRaw('id =' . $_SESSION['bookId'])->first();
-
-          
-
-          if ($book == null) {
-           return view('book', ['book' => 'null']);
-          }
-
-
-          $genre = Genres::select('*')
-          ->whereRaw('id =' . $book->genre_id)->first();
-
-          $forInst = Instruments::select('*')
-          ->whereRaw('id =' . $book->instrument_id)->first();
-
-          $reviews = Reviews::all();
-          
-          $reviewsArray = array();
-          
-
-          $reviewsAll = Reviews::
-          join('users', 'users.id', '=', 'reviews.user_id')
-          ->orderby('reviews.created_at', 'DESC')
-          ->get([
-               'reviews.id',
-               'reviews.review',
-               'reviews.rating',
-               'reviews.user_id',
-               'reviews.book_id',
-               'users.username AS user',
-               'users.id AS userId'
-             ]);
-
-             foreach ($reviewsAll as $review) {
-               if ($review->book_id == $book->id) {
-                array_push($reviewsArray, $review );
-               }
-             }
-
-         
-          $ratingArray = array();
-          foreach ( $reviewsAll as $rat) {
-            if ($rat->book_id == $book->id) {
-             array_push($ratingArray, $rat->rating);
-            }
-           }
-           $avgRating = array_sum($ratingArray)/
-           (count($ratingArray) == 0 ? 1 : count($ratingArray) );
-  
-          
-         $_SESSION['bookId'] = $book->id;
-
-          return view('book', 
-          ['book' => $book],
-          ['otherTables'=> [$genre, $forInst, $reviewsArray, $avgRating]], 
-          );
+     
+      $review  = Reviews::find($request->input('reviewId'))->delete();
+    
+      return redirect()->action(
+        [AppController::class, 'book'], ['id' => $_SESSION['bookId']]
+    );
 
     }
 
@@ -102,65 +45,9 @@ class SendReviewController extends AppController
       $review->rating = $request->input('rating');
       $review->save();
 
-      $book =  DB::table('books')
-      ->select('*')
-      
-      ->whereRaw('id =' . $_SESSION['bookId'])->first();
-
-      
-
-      if ($book == null) {
-       return view('book', ['book' => 'null']);
-      }
-
-
-      $genre = Genres::select('*')
-      ->whereRaw('id =' . $book->genre_id)->first();
-
-      $forInst = Instruments::select('*')
-      ->whereRaw('id =' . $book->instrument_id)->first();
-
-      $reviews = Reviews::all();
-      
-      $reviewsArray = array();
-      
-
-      $reviewsAll = Reviews::
-      join('users', 'users.id', '=', 'reviews.user_id')
-      ->orderby('reviews.created_at', 'DESC')
-      ->get([
-           'reviews.id',
-           'reviews.review',
-           'reviews.rating',
-           'reviews.user_id',
-           'reviews.book_id',
-           'users.username AS user',
-           'users.id AS userId'
-         ]);
-
-         foreach ($reviewsAll as $review) {
-           if ($review->book_id == $book->id) {
-            array_push($reviewsArray, $review );
-           }
-         }
-
-     
-      $ratingArray = array();
-      foreach ( $reviewsAll as $rat) {
-        if ($rat->book_id == $book->id) {
-         array_push($ratingArray, $rat->rating);
-        }
-       }
-       $avgRating = array_sum($ratingArray)/
-       (count($ratingArray) == 0 ? 1 : count($ratingArray) );
-
-      
-     $_SESSION['bookId'] = $book->id;
-
-      return view('book', 
-      ['book' => $book],
-      ['otherTables'=> [$genre, $forInst, $reviewsArray, $avgRating]], 
-      );
+      return redirect()->action(
+        [AppController::class, 'book'], ['id' => $_SESSION['bookId']]
+    );
       
     }
 
