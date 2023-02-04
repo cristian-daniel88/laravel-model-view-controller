@@ -194,11 +194,6 @@ if(!empty($countRating)) {
 
 
 
-
-
-
-
-
 @endsection
 
 

@@ -206,12 +206,26 @@ h1 {
 .review-textarea div {
   margin: auto;
 }
-.review-textarea textarea {
+.review-textarea textarea, .review-edit textarea {
   resize: none;
   width: 100%;
 }
 .review-textarea input {
   user-select: none;
+}
+
+#buttonDeleteBook {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+#buttonDeleteBook button {
+  border: solid 1px rgb(151, 114, 114);
+  padding: 5px;
+  border-radius: 5px;
+}
+#buttonDeleteBook i {
+  color: grey;
 }
 
 /*# sourceMappingURL=style.css.map */

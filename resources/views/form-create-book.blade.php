@@ -109,7 +109,7 @@ tracking-wider
 
 <div class="w-full max-w-xl m-auto my-auto ">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    method="POST" action="/create" enctype="multipart/form-data"
+    method="POST" action="{{env('app_url')}}create" enctype="multipart/form-data"
     >
     @csrf
     <div class="mb-4">
